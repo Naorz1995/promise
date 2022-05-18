@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <div id="d"></div>
+</body>
+<script>
+
+    let num = 5;
+let promise = new Promise(function(resolve, reject){
+document.getElementById('p').innerText = "הקבצים בטעינה";
+setTimeout(function(){
+    if(num > 1){
+        resolve(document.getElementById('p').innerHTML = "קובץ 1 נטען");
+    }else{
+        reject(document.getElementById('p').innerHTML = "error")
+    }
+},2000)
+})
+
+let promise2 = new Promise(function(resolve, reject){
+document.getElementById('p').innerText = "הקבצים בטעינה";
+setTimeout(function(){
+if(num > 1){
+resolve(document.getElementById('p2').innerHTML = "קובץ 2 נטען");
+}else{
+reject(document.getElementById('p2').innerHTML = "error")
+}
+},5000)
+})
+
+let promise3 = new Promise(function(resolve, reject){
+document.getElementById('p').innerText = "הקבצים בטעינה";
+setTimeout(function(){
+if(num > 1){
+resolve(document.getElementById('p3').innerHTML = "קובץ 3 נטען");
+}else{
+reject(document.getElementById('p3').innerHTML = "error")
+}
+},8000)
+})
+
+setInterval(function(){console.log(promise, promise2, promise3)}, 1000)
+
+
+
+
+</script>
+</html>
